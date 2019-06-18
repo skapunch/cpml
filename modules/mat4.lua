@@ -542,9 +542,9 @@ function mat4.look_at(out, a, eye, look_at, up)
 	out[10] = y_axis.z
 	out[11] = z_axis.z
 	out[12] = 0
-	out[13] = 0
-	out[14] = 0
-	out[15] = 0
+	out[13] = x_axis:dot(eye) * -1
+	out[14] = y_axis:dot(eye) * -1
+	out[15] = z_axis:dot(eye) * -1
 	out[16] = 1
 
   return out
